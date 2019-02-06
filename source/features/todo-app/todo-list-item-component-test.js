@@ -24,6 +24,7 @@ test("TodoListItem", t => {
       "should render the todo title"
     );
   }
+
   t.test("user can mark todos complete", t => {
     {
       const $ = dom.load(
@@ -89,5 +90,6 @@ test("TodoListItem", t => {
     }
     t.end();
   });
+  
   t.end();
 });
