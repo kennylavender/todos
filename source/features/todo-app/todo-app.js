@@ -3,6 +3,7 @@ import { ReactReduxContext } from "react-redux";
 import TodoList from "./todo-list-container";
 import { AddTodo } from "./add-todo-container";
 import { loadTodosRequest } from "./todo-app-reducer";
+import { TodoAppComponent } from "./todo-app-component";
 
 export const TodoApp = () => {
   let foo = "foo";
@@ -16,9 +17,9 @@ export const TodoApp = () => {
   }, [foo]);
 
   return (
-    <React.Fragment>
+    <TodoAppComponent>
       <AddTodo key={"AddTodo"} />
       <TodoList key={"TodoList"} />
-    </React.Fragment>
+    </TodoAppComponent>
   );
 };

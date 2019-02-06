@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { ReactReduxContext } from "react-redux";
 import { createTodoRequest } from "./todo-app-reducer";
+import { Input } from "./input-component";
 
 const ENTER_KEY = 13;
 
@@ -23,7 +24,7 @@ export const AddTodo = () => {
   };
 
   return (
-    <input
+    <Input
       type="text"
       value={newTodo}
       onChange={handleNewTodoChagne}
