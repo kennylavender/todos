@@ -33,9 +33,10 @@ export const deleteTodo = id =>
     fakeDatabase.todos = omit([id], fakeDatabase.todos);
   });
 
-export const updateTodo = todo => delay(300).then(() => {
-  const prevTodo = fakeDatabase.todos[todo.id]
-  if (!prevTodo) throw new Error('todo does not exist')
-  const newTodo = fakeDatabase.todos[todo.id] = { ...prevTodo, ...todo }
-  return newTodo
-})
+export const updateTodo = todo =>
+  delay(300).then(() => {
+    const prevTodo = fakeDatabase.todos[todo.id];
+    if (!prevTodo) throw new Error("todo does not exist");
+    const newTodo = (fakeDatabase.todos[todo.id] = { ...prevTodo, ...todo });
+    return newTodo;
+  });
