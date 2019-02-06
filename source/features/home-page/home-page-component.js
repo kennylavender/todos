@@ -1,8 +1,8 @@
 import React from "react";
 import { TodoApp } from "../todo-app/todo-app";
-import { BodyStyles } from "../../components/body-styles";
+import { CSSReset } from "../../components/css-reset";
 export const HomePage = props => (
-  <BodyStyles>
+  <CSSReset>
     <TodoApp />
-  </BodyStyles>
+  </CSSReset>
 );

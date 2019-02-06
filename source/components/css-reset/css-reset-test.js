@@ -1,17 +1,17 @@
 import test from "tape";
-import { BodyStyles } from "./body-styles";
+import { CSSReset } from "./css-reset";
 import React from "react";
 import dom from "cheerio";
 import { renderToStaticMarkup as render } from "react-dom/server";
 
-test("BodyStyles", t => {
+test("CSSReset", t => {
   t.test("render children", t => {
     const $ = dom.load(
       render(
-        <BodyStyles>
+        <CSSReset>
           <div className="child" />
           <div className="child" />
-        </BodyStyles>
+        </CSSReset>
       )
     );
 
