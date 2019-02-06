@@ -44,9 +44,9 @@ function* watchLoadTodosRequest() {
 }
 
 function* handleUpdateTodoRequest(action = {}) {
-  const todo = yield call(updateTodo, action.payload)
-  yield put(receiveTodos([ todo ]))
-  yield put(updateTodoSuccess(todo))
+  const todo = yield call(updateTodo, action.payload);
+  yield put(receiveTodos([todo]));
+  yield put(updateTodoSuccess(todo));
 }
 
 function* watchUpdateTodoRequest() {
@@ -59,7 +59,7 @@ export default function*() {
       call(watchCreateTodoRequest),
       call(watchLoadTodosRequest),
       call(watchDeleteTodoRequest),
-      call(watchUpdateTodoRequest)
+      call(watchUpdateTodoRequest),
     ])
   );
 }

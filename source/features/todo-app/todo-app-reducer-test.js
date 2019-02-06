@@ -95,11 +95,8 @@ test("todoAppReducer", t => {
   });
 
   t.test("updateTodoSuccess()", t => {
-    const todo = { id: 'foo', title: 'Foo' };
-    const prevState = todoAppReducer(
-      todoAppReducer(),
-      updateTodoRequest(todo)
-    );
+    const todo = { id: "foo", title: "Foo" };
+    const prevState = todoAppReducer(todoAppReducer(), updateTodoRequest(todo));
     const state = todoAppReducer(prevState, updateTodoSuccess());
 
     t.deepEqual(
