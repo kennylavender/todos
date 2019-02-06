@@ -9,7 +9,7 @@ import {
   updateTodoRequest,
   updateTodoSuccess,
 } from "./todo-app-reducer";
-import { createTodo, fetchTodos, deleteTodo } from "./todo-app-api";
+import { createTodo, fetchTodos, deleteTodo, updateTodo } from "./todo-app-api";
 import { receiveTodos } from "../todos/todos-reducer";
 
 function* handleCreateTodoRequest(action = {}) {
