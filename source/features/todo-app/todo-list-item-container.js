@@ -1,8 +1,5 @@
 import { getTodoById } from "../todos/todos-reducer";
-import {
-  deleteTodoRequest,
-  updateTodoRequest,
-} from "./todo-app-reducer";
+import { deleteTodoRequest, updateTodoRequest } from "./todo-app-reducer";
 import { TodoListItem } from "./todo-list-item-component";
 import { useContext } from "react";
 import { ReactReduxContext } from "react-redux";
@@ -19,9 +16,11 @@ export const TodoListItemContainer = ({ todoId }) => {
       todo={todo}
       onDeleteClick={() => dispatch(deleteTodoRequest(todo.id))}
       onMarkCompleteClick={() =>
-        dispatch(updateTodoRequest({ ...todo, isComplete: true }))}
+        dispatch(updateTodoRequest({ ...todo, isComplete: true }))
+      }
       onMarkIncompleteClick={() =>
-        dispatch(updateTodoRequest({ ...todo, isComplete: false }))}
+        dispatch(updateTodoRequest({ ...todo, isComplete: false }))
+      }
     />
   );
 };
