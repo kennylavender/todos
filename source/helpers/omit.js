@@ -1,3 +1,1 @@
-import omit from "ramda/src/omit";
-
-export default omit
+export { default } from "ramda/src/omit";
