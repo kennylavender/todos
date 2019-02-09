@@ -2,7 +2,7 @@
 
 ## Description
 
-A practice, demo app loosely using [http://todomvc.com/](TodoMVC) as a starting point.
+A practice, demo app, using [http://todomvc.com/](TodoMVC) as a loose starting point.
 
 ## Development
 
