@@ -16,12 +16,12 @@ export const fetchTodos = () =>
 
 export const createTodo = ({
   title = "No name given :(",
-  isCompleted = false,
+  isComplete = false,
 }) =>
   delay(300).then(() => {
     const todo = Object.assign(
       {},
-      { title, isCompleted },
+      { title, isComplete },
       { id: cuid(), time: new Date().getTime() }
     );
     fakeDatabase.todos[todo.id] = todo;
