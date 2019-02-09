@@ -1,5 +1,9 @@
 # todos
 
+## Description
+
+A practice, demo app loosely using [http://todomvc.com/](TodoMVC) as a starting point.
+
 ## Development
 
 ```
