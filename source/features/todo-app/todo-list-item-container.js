@@ -13,6 +13,7 @@ export const TodoListItemContainer = ({ todoId }) => {
 
   return (
     <TodoListItem
+      key={todo.id}
       todo={todo}
       onDeleteClick={() => dispatch(deleteTodoRequest(todo.id))}
       onMarkCompleteClick={() =>
