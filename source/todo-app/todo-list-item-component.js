@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Checkbox from '../components/checkbox'
+import Checkbox from "../components/checkbox";
 
 const classes = obj =>
   Object.keys(obj).reduce((a, c) => {
@@ -19,7 +19,10 @@ export const TodoListItem = ({
       "is-complete": todo.isComplete,
     })}
   >
-    <Checkbox isChecked={todo.isComplete} onClick={todo.isComplete ? onMarkIncompleteClick: onMarkCompleteClick} />
+    <Checkbox
+      isChecked={todo.isComplete}
+      onClick={todo.isComplete ? onMarkIncompleteClick : onMarkCompleteClick}
+    />
     <span className="title-text">{todo.title}</span>
     <span className="delete-button" onClick={onDeleteClick}>
       delete

@@ -17,4 +17,4 @@ const BodyStyles = ({ children }) => (
   </React.Fragment>
 );
 
-export default BodyStyles
+export default BodyStyles;

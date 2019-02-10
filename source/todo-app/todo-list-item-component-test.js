@@ -63,7 +63,6 @@ test("TodoListItem", t => {
         true,
         "should render is-complete class when the todo.isComplete is true"
       );
-
     }
     t.end();
   });
