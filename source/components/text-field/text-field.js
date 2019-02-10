@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Input = props => (
+const TextField = props => (
   <React.Fragment>
-    <input {...props} />
+    <input type="text" {...props} />
     <style jsx>{`
       input {
         box-sizing: border-box;
@@ -15,3 +15,5 @@ export const Input = props => (
     `}</style>
   </React.Fragment>
 );
+
+export default TextField
