@@ -10,7 +10,7 @@
     "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
     "build": "next build",
     "start": "next start",
-    "test-unit": "tape -r @babel/register source/**/*-test.js",
+    "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
     "test-unit-watch": "watch 'npm run test-unit' source"
   },
   "repository": {
