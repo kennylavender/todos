@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Checkbox = ({ isChecked, onClick }) => (
+const Checkbox = props => (
   <React.Fragment>
-    <input type="checkbox" checked={isChecked} onClick={onClick} />
+    <input type="checkbox" {...props} />
     <style jsx>{``}</style>
   </React.Fragment>
 );
 
 Checkbox.propTypes = {
-  isChecked: PropTypes.bool.isRequired,
-  onClick: PropTypes.func,
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func,
 };
 
 export default Checkbox;

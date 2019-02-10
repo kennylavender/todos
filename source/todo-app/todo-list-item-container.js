@@ -11,17 +11,17 @@ export const TodoListItemContainer = ({ todoId }) => {
   const state = getState();
   const todo = getTodoById(todoId)(state);
 
+  const handleCheckboxChange = event => {
+    event.preventDefault();
+    dispatch(updateTodoRequest({ ...todo, isComplete: event.target.checked }));
+  };
+
   return (
     <TodoListItem
       key={todo.id}
       todo={todo}
       onDeleteClick={() => dispatch(deleteTodoRequest(todo.id))}
-      onMarkCompleteClick={() =>
-        dispatch(updateTodoRequest({ ...todo, isComplete: true }))
-      }
-      onMarkIncompleteClick={() =>
-        dispatch(updateTodoRequest({ ...todo, isComplete: false }))
-      }
+      onCheckboxChange={handleCheckboxChange}
     />
   );
 };

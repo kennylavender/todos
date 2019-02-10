@@ -7,22 +7,14 @@ const classes = obj =>
     return obj[c] === true ? a + " " + c : a;
   }, "");
 
-export const TodoListItem = ({
-  todo,
-  onDeleteClick,
-  onMarkCompleteClick,
-  onMarkIncompleteClick,
-}) => (
+export const TodoListItem = ({ todo, onDeleteClick, onCheckboxChange }) => (
   <li
     className={classes({
       "todo-list-item": true,
       "is-complete": todo.isComplete,
     })}
   >
-    <Checkbox
-      isChecked={todo.isComplete}
-      onClick={todo.isComplete ? onMarkIncompleteClick : onMarkCompleteClick}
-    />
+    <Checkbox checked={todo.isComplete} onChange={onCheckboxChange} />
     <span className="title-text">{todo.title}</span>
     <span className="delete-button" onClick={onDeleteClick}>
       delete
