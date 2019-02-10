@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Checkbox from '../../components/checkbox'
+import Checkbox from '../components/checkbox'
 
 const classes = obj =>
   Object.keys(obj).reduce((a, c) => {

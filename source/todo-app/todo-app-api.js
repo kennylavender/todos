@@ -1,5 +1,5 @@
 import cuid from "cuid";
-import omit from "../../helpers/omit";
+import omit from "../helpers/omit";
 
 let fakeDatabase = {
   todos: {},

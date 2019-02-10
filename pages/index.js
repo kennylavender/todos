@@ -1,3 +1,3 @@
-import HomePage from '../source/features/home-page'
+import HomePage from '../source/home-page'
 
 export default HomePage
