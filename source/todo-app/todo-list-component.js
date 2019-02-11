@@ -8,6 +8,7 @@ export const TodoList = ({ children }) => (
         list-style-type: none;
         padding: 0;
         margin: 0;
+        border: 1px solid #ccc;
       }
     `}</style>
   </React.Fragment>
