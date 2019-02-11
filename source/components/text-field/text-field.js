@@ -16,4 +16,4 @@ const TextField = props => (
   </React.Fragment>
 );
 
-export default TextField
+export default TextField;

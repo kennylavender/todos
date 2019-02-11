@@ -8,7 +8,7 @@ test("Text", t => {
   t.test("render children", t => {
     const $ = dom.load(render(<Text>Foo</Text>));
 
-    t.deepEqual($("span").text(), 'Foo', "should render the text");
+    t.deepEqual($("span").text(), "Foo", "should render the text");
 
     t.end();
   });
