@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { ReactReduxContext } from "react-redux";
 import { createTodoRequest } from "./todo-app-reducer";
-import TextField from '../components/text-field'
+import TextField from "../components/text-field";
 
 const ENTER_KEY = 13;
 

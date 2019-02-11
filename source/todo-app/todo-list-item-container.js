@@ -1,8 +1,11 @@
-import { getTodoById } from "../todos/todos-reducer";
-import { deleteTodoRequest, updateTodoRequest } from "./todo-app-reducer";
-import { TodoListItem } from "./todo-list-item-component";
 import { useContext } from "react";
 import { ReactReduxContext } from "react-redux";
+import { deleteTodoRequest, updateTodoRequest } from "./todo-app-reducer";
+import { getTodoById } from "../todos/todos-reducer";
+import Checkbox from "../components/checkbox";
+import Text from "../components/text";
+import Button from "../components/button";
+import TodoListItem from "./todo-list-item-component";
 
 export const TodoListItemContainer = ({ todoId }) => {
   const {
@@ -17,12 +20,16 @@ export const TodoListItemContainer = ({ todoId }) => {
   };
 
   return (
-    <TodoListItem
-      key={todo.id}
-      todo={todo}
-      onDeleteClick={() => dispatch(deleteTodoRequest(todo.id))}
-      onCheckboxChange={handleCheckboxChange}
-    />
+    <TodoListItem>
+      <Checkbox checked={todo.isComplete} onChange={handleCheckboxChange} />
+      <Text style={{ fontSize: "2rem" }}>{todo.title}</Text>
+      <Button
+        className="delete-button"
+        onClick={() => dispatch(deleteTodoRequest(todo.id))}
+      >
+        Delete
+      </Button>
+    </TodoListItem>
   );
 };
 
