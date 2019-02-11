@@ -5,11 +5,10 @@ export const TodoAppComponent = ({ children }) => (
     {children}
     <style jsx>{`
       .todo-app {
-        max-width: 50rem;
+        max-width: 40rem;
         margin: 1.2rem auto;
-        padding: 0.5rem;
-        border: 1px solid #333;
-        border-radius: 5px;
+        padding: 0;
+        border: 1px solid #ccc;
       }
     `}</style>
   </div>

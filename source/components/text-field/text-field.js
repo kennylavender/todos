@@ -11,6 +11,7 @@ const TextField = props => (
         padding: 0.2rem;
         width: 100%;
         margin: 0;
+        border: 0;
       }
     `}</style>
   </React.Fragment>

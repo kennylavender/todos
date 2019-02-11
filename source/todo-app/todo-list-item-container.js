@@ -22,7 +22,7 @@ export const TodoListItemContainer = ({ todoId }) => {
   return (
     <TodoListItem>
       <Checkbox checked={todo.isComplete} onChange={handleCheckboxChange} />
-      <Text style={{ fontSize: "2rem" }}>{todo.title}</Text>
+      <Text style={{ flexGrow: 1 }}>{todo.title}</Text>
       <Button
         className="delete-button"
         onClick={() => dispatch(deleteTodoRequest(todo.id))}
