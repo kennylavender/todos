@@ -24,7 +24,6 @@ const TodoListItemContainer = ({ todoId }) => {
   };
 
   const [todoTitleEditState, todoTitleEditDispatch] = useTextEdit(todo.title);
-  console.log(todoTitleEditState);
 
   return (
     <TodoListItem>
@@ -38,9 +37,16 @@ const TodoListItemContainer = ({ todoId }) => {
               textEditActions.updateValue(event.target.value)
             );
           }}
-          onKeyDown={event => {
+          autoFocus
+          onKeyUp={event => {
             if (event.keyCode !== ENTER_KEY) return;
 
+            todoTitleEditDispatch(textEditActions.save());
+            dispatch(
+              updateTodoRequest({ ...todo, title: todoTitleEditState.value })
+            );
+          }}
+          onBlur={() => {
             todoTitleEditDispatch(textEditActions.save());
             dispatch(
               updateTodoRequest({ ...todo, title: todoTitleEditState.value })
