@@ -1,7 +1,7 @@
 import test from "tape";
 import React from "react";
 import dom from "cheerio";
-import { TodoList } from "./todo-list-component";
+import TodoList from "./todo-list-component";
 import { renderToStaticMarkup as render } from "react-dom/server";
 
 test("TodoList", t => {

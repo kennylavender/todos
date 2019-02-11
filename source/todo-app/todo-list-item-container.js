@@ -7,7 +7,7 @@ import Text from "../components/text";
 import Button from "../components/button";
 import TodoListItem from "./todo-list-item-component";
 
-export const TodoListItemContainer = ({ todoId }) => {
+const TodoListItemContainer = ({ todoId }) => {
   const {
     store: { dispatch, getState },
   } = useContext(ReactReduxContext);

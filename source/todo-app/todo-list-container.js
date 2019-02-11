@@ -1,10 +1,10 @@
 import { getTodoIds } from "./todo-app-reducer";
-import { TodoList } from "./todo-list-component";
-import { TodoListItemContainer } from "./todo-list-item-container";
+import TodoList from "./todo-list-component";
+import TodoListItemContainer from "./todo-list-item-container";
 import { useContext } from "react";
 import { ReactReduxContext } from "react-redux";
 
-export const TodoListContainer = () => {
+const TodoListContainer = () => {
   const {
     store: { getState },
   } = useContext(ReactReduxContext);

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TodoList = ({ children }) => (
+const TodoList = ({ children }) => (
   <React.Fragment>
     <ul className="todo-list">{children}</ul>
     <style jsx>{`
@@ -13,3 +13,5 @@ export const TodoList = ({ children }) => (
     `}</style>
   </React.Fragment>
 );
+
+export default TodoList
