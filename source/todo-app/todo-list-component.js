@@ -14,4 +14,4 @@ const TodoList = ({ children }) => (
   </React.Fragment>
 );
 
-export default TodoList
+export default TodoList;
