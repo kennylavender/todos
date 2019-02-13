@@ -27,12 +27,12 @@
     "cheerio": "1.0.0-rc.2",
     "cuid": "^2.1.4",
     "next": "7.0.2",
-    "ramda": "^0.26.1",
+    "ramda": "0.26.1",
     "react": "16.8.0-alpha.1",
     "react-dom": "16.8.0-alpha.1",
     "react-redux": "6.0.0",
     "redux": "4.0.1",
-    "redux-logger": "^3.0.6",
+    "redux-logger": "3.0.6",
     "redux-saga": "^1.0.1"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "@babel/preset-env": "7.3.1",
     "@babel/preset-react": "7.0.0",
     "@babel/register": "7.0.0",
-    "babel-preset-next": "^1.2.0",
+    "babel-preset-next": "1.2.0",
     "prettier": "1.16.4",
     "prop-types": "^15.6.2",
     "tape": "4.9.2",
