@@ -25,6 +25,11 @@ const TodoListItemContainer = ({ todoId }) => {
 
   const [todoTitleEditState, todoTitleEditDispatch] = useTextEdit(todo.title);
 
+  const saveTodoTitle = () => {
+    todoTitleEditDispatch(textEditActions.save());
+    dispatch(updateTodoRequest({ ...todo, title: todoTitleEditState.value }));
+  };
+
   return (
     <TodoListItem>
       <Checkbox checked={todo.isComplete} onChange={handleCheckboxChange} />
@@ -40,17 +45,10 @@ const TodoListItemContainer = ({ todoId }) => {
           autoFocus
           onKeyUp={event => {
             if (event.keyCode !== ENTER_KEY) return;
-
-            todoTitleEditDispatch(textEditActions.save());
-            dispatch(
-              updateTodoRequest({ ...todo, title: todoTitleEditState.value })
-            );
+            saveTodoTitle();
           }}
           onBlur={() => {
-            todoTitleEditDispatch(textEditActions.save());
-            dispatch(
-              updateTodoRequest({ ...todo, title: todoTitleEditState.value })
-            );
+            saveTodoTitle();
           }}
         />
       ) : (
