@@ -13,12 +13,7 @@ const TodoListContainer = () => {
 
   return (
     <TodoList>
-      {todoIds.map(todoId =>
-        TodoListItemContainer({
-          key: todoId,
-          todoId,
-        })
-      )}
+      {todoIds.map(todoId => <TodoListItemContainer key={todoId} todoId={todoId} />)}
     </TodoList>
   );
 };
