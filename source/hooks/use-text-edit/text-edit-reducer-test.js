@@ -10,7 +10,7 @@ import {
 
 const createState = o => Object.assign({}, defaultState, o);
 
-describe.only("textEditReducer", ({ test }) => {
+describe("textEditReducer", ({ test }) => {
   test("default state", ({ end, deepEqual }) => {
     deepEqual(
       textEditReducer(),
