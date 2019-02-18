@@ -10,7 +10,7 @@ import {
   updateTodoSuccess,
 } from "./todo-app-reducer";
 import { createTodo, fetchTodos, deleteTodo, updateTodo } from "./todo-app-api";
-import { receiveTodos } from "../todos/todos-reducer";
+import { receiveTodos } from "../todos/todos-by-id-reducer";
 
 function* handleCreateTodoRequest(action = {}) {
   const todo = yield call(createTodo, action.payload);

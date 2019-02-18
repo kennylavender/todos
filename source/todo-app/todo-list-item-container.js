@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ReactReduxContext } from "react-redux";
 import { deleteTodoRequest, updateTodoRequest } from "./todo-app-reducer";
-import { getTodoById } from "../todos/todos-reducer";
+import { getTodoById } from "../todos/todos-by-id-reducer";
 import useTextEdit, * as textEditActions from "../hooks/use-text-edit";
 import Checkbox from "../components/checkbox";
 import Text from "../components/text";
