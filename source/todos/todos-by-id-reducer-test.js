@@ -5,7 +5,7 @@ import {
   receiveTodos,
   defaultState,
   getTodoById,
-} from "./todos-reducer";
+} from "./todos-by-id-reducer";
 
 const toById = xs =>
   xs.reduce((a, c) => {
