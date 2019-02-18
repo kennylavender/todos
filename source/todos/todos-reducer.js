@@ -1,4 +1,4 @@
-export const todosReducerSlice = "todos";
+export const todosReducerSlice = "todosById";
 
 export const receiveTodos = (todos = []) => ({
   type: "todos::receive_todos",
