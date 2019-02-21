@@ -1,5 +1,5 @@
-const cuid = require('cuid');
-const omit = require('ramda/src/omit');
+const cuid = require("cuid");
+const omit = require("ramda/src/omit");
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -27,10 +27,10 @@ export const createTodo = (obj, args) =>
 
 export const deleteTodo = (obj, args) =>
   delay(300).then(() => {
-    const todo = fakeDatabase.todos[args.id]
+    const todo = fakeDatabase.todos[args.id];
     if (todo) {
       fakeDatabase.todos = omit([args.id], fakeDatabase.todos);
-      return todo
+      return todo;
     }
   });
 
