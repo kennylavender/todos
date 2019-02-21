@@ -1,43 +1,41 @@
-const cuid = require("cuid");
-const omit = require("ramda/src/omit");
+import omit from "ramda/src/omit";
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-let fakeDatabase = {
-  todos: {},
-};
+let todosById = {};
 
-export const fetchTodos = () =>
+export const dbFetchTodos = () =>
   delay(300).then(() => {
-    return Object.keys(fakeDatabase.todos)
-      .map(id => fakeDatabase.todos[id])
+    return Object.keys(todosById)
+      .map(id => todosById[id])
       .sort((a, b) => b.time - a.time);
   });
 
-export const createTodo = (obj, args) =>
+export const dbGetTodo = id =>
   delay(300).then(() => {
-    const todo = Object.assign(
-      {},
-      { text: args.text, isComplete: false },
-      { id: cuid(), time: new Date().getTime() }
-    );
-    fakeDatabase.todos[todo.id] = todo;
+    return todosById[id];
+  });
+
+export const dbCreateTodo = todo =>
+  delay(300).then(() => {
+    const prevTodo = todosById[todo.id];
+    if (prevTodo) throw new Error("todo already exists");
+    todosById[todo.id] = todo;
     return todo;
   });
 
-export const deleteTodo = (obj, args) =>
+export const dbDeleteTodo = id =>
   delay(300).then(() => {
-    const todo = fakeDatabase.todos[args.id];
-    if (todo) {
-      fakeDatabase.todos = omit([args.id], fakeDatabase.todos);
-      return todo;
-    }
+    const todo = todosById[id];
+    if (!todo) throw new Error("todo does not exist");
+    todosById = omit([id], todosById);
+    return todo;
   });
 
-export const updateTodo = (obj, todo) =>
+export const dbUpdateTodo = todo =>
   delay(300).then(() => {
-    const prevTodo = fakeDatabase.todos[todo.id];
+    const prevTodo = todosById[todo.id];
     if (!prevTodo) throw new Error("todo does not exist");
-    const newTodo = (fakeDatabase.todos[todo.id] = { ...prevTodo, ...todo });
-    return newTodo;
+    todosById[todo.id] = todo;
+    return todo;
   });

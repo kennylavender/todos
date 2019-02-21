@@ -1,5 +1,13 @@
+import {
+  dbFetchTodos,
+  dbCreateTodo,
+  dbDeleteTodo,
+  dbUpdateTodo,
+  dbGetTodo,
+} from "./database";
+import cuid from "cuid";
+
 const gql = require("graphql");
-import { fetchTodos, createTodo, deleteTodo, updateTodo } from "./database";
 
 const {
   GraphQLList,
@@ -24,6 +32,28 @@ const Todo = new GraphQLObjectType({
     },
   }),
 });
+
+const fetchTodos = () => dbFetchTodos();
+
+const createTodo = (obj, args) => {
+  const todo = {
+    text: args.text,
+    isComplete: false,
+    id: cuid(),
+    time: new Date().getTime(),
+  };
+  return dbCreateTodo(todo);
+};
+
+const deleteTodo = (obj, args) => {
+  return dbDeleteTodo(args.id);
+};
+
+const updateTodo = (obj, args) => {
+  return dbGetTodo(args.id).then(todo =>
+    dbUpdateTodo(Object.assign(todo, args))
+  );
+};
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
