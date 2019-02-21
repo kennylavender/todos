@@ -7,7 +7,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node -r @babel/register source/server/index.js",
-    "start": "NODE_ENV=production source/server/index.js",
     "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
     "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
     "test-unit-watch": "watch 'npm run test-unit' source"
