@@ -1,6 +1,13 @@
+import {
+  dbFetchTodos,
+  dbCreateTodo,
+  dbDeleteTodo,
+  dbUpdateTodo,
+  dbGetTodo,
+} from "./database";
+import cuid from "cuid";
+
 const gql = require("graphql");
-const cuid = require("cuid");
-const omit = require("ramda/src/omit");
 
 const {
   GraphQLList,
@@ -26,42 +33,27 @@ const Todo = new GraphQLObjectType({
   }),
 });
 
-let fakeDatabase = {
-  todos: {},
+const fetchTodos = () => dbFetchTodos();
+
+const createTodo = (obj, args) => {
+  const todo = {
+    text: args.text,
+    isComplete: false,
+    id: cuid(),
+    time: new Date().getTime(),
+  };
+  return dbCreateTodo(todo);
 };
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const deleteTodo = (obj, args) => {
+  return dbDeleteTodo(args.id);
+};
 
-const fetchTodos = () =>
-  delay(300).then(() => {
-    return Object.keys(fakeDatabase.todos)
-      .map(id => fakeDatabase.todos[id])
-      .sort((a, b) => b.time - a.time);
-  });
-
-const createTodo = (obj, args) =>
-  delay(300).then(() => {
-    const todo = Object.assign(
-      {},
-      { text: args.text, isComplete: false },
-      { id: cuid(), time: new Date().getTime() }
-    );
-    fakeDatabase.todos[todo.id] = todo;
-    return todo;
-  });
-
-const deleteTodo = (obj, args) =>
-  delay(300).then(() => {
-    fakeDatabase.todos = omit([args.id], fakeDatabase.todos);
-  });
-
-const updateTodo = (obj, todo) =>
-  delay(300).then(() => {
-    const prevTodo = fakeDatabase.todos[todo.id];
-    if (!prevTodo) throw new Error("todo does not exist");
-    const newTodo = (fakeDatabase.todos[todo.id] = { ...prevTodo, ...todo });
-    return newTodo;
-  });
+const updateTodo = (obj, args) => {
+  return dbGetTodo(args.id).then(todo =>
+    dbUpdateTodo(Object.assign(todo, args))
+  );
+};
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node -r @babel/register source/server/index.js",
+    "dev": "nodemon -r @babel/register source/server/index.js",
     "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
     "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
     "test-unit-watch": "watch 'npm run test-unit' source"
@@ -35,6 +35,7 @@
     "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.1",
     "@babel/register": "7.0.0",
+    "nodemon": "1.18.10",
     "prettier": "1.16.4",
     "tape": "4.9.2",
     "watch": "1.0.2"
