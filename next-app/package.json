@@ -1,0 +1,52 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
+    "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
+    "test-unit-watch": "watch 'npm run test-unit' source"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennylavender/todos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/kennylavender/todos/issues"
+  },
+  "homepage": "https://github.com/kennylavender/todos#readme",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.2",
+    "cuid": "2.1.4",
+    "next": "7.0.2",
+    "ramda": "0.26.1",
+    "react": "16.8.2",
+    "react-dom": "16.8.2",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1",
+    "redux-logger": "3.0.6",
+    "redux-saga": "1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.2.2",
+    "@babel/plugin-transform-regenerator": "7.0.0",
+    "@babel/polyfill": "7.2.5",
+    "@babel/preset-env": "7.3.1",
+    "@babel/preset-react": "7.0.0",
+    "@babel/register": "7.0.0",
+    "babel-preset-next": "1.2.0",
+    "prettier": "1.16.4",
+    "prop-types": "15.6.2",
+    "tape": "4.9.2",
+    "watch": "1.0.2"
+  }
+}
