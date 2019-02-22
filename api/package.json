@@ -9,7 +9,8 @@
     "dev": "nodemon -r @babel/register source/index.js",
     "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
     "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
-    "test-unit-watch": "watch 'npm run test-unit' source"
+    "test-unit-watch": "watch 'npm run test-unit' source",
+    "test-func": "tape -r @babel/register \"source/test/**/*-ftest.js\""
   },
   "repository": {
     "type": "git",
@@ -31,12 +32,12 @@
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.2.2",
-    "@babel/plugin-transform-regenerator": "7.0.0",
     "@babel/polyfill": "7.2.5",
     "@babel/preset-env": "7.3.1",
     "@babel/register": "7.0.0",
     "nodemon": "1.18.10",
     "prettier": "1.16.4",
+    "supertest": "3.4.2",
     "tape": "4.9.2",
     "watch": "1.0.2"
   }
