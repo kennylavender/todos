@@ -1,8 +1,8 @@
-# todos next app
+# todos GraphQL API
 
 ## Description
 
-A practice, demo app, using [TodoMVC](http://todomvc.com/) as a loose starting point.
+An GraphQL API for multiple frontend apps
 
 ## Development
 
