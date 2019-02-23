@@ -8,9 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -r @babel/register source/index.js",
     "prettier": "prettier --trailing-comma es5 --write \"source/**/*.js\"",
-    "test-unit": "tape -r @babel/register \"source/**/*-test.js\"",
+    "test-unit": "tape -r @babel/register \"source/**/*-spec.js\"",
     "test-unit-watch": "watch 'npm run test-unit' source",
-    "test-func": "tape -r @babel/register \"source/test/**/*-ftest.js\""
+    "test-integration": "tape -r @babel/register \"source/test-integration/**/*-test.js\""
   },
   "repository": {
     "type": "git",
