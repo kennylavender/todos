@@ -2,7 +2,11 @@
   "version": 2,
   "name": "todos",
   "builds": [
-    { "src": "/api/source/todos-endpoint.js", "use": "@now/node" }
+    {
+      "src": "/api/source/todos-endpoint.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "8mb" }
+    }
   ],
   "routes": [
     { "src": "/api/todos", "dest": "/api/source/todos-endpoint.js" }
