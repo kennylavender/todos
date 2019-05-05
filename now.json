@@ -10,5 +10,8 @@
   ],
   "routes": [
     { "src": "/api/todos", "dest": "/api/source/todos-endpoint.js" }
-  ]
+  ],
+  "env": {
+    "FIREBASE_ADMIN_CREDENTIALS": "@firebase-admin-credentials"
+  }
 }
