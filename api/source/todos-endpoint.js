@@ -1,10 +1,10 @@
-require('./env');
+require("./env");
 const express = require("express");
 const todosAPI = require("./todos-api");
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 app.get("/api/todos", (req, res) => {
   todosAPI.getUserTodos().then(todos => {
@@ -12,7 +12,7 @@ app.get("/api/todos", (req, res) => {
       todos.reduce((acc, cur) => {
         acc[cur.id];
         return acc;
-      }, {}),
+      }, {})
     );
   });
 });
