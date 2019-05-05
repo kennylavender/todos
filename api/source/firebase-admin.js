@@ -1,5 +1,9 @@
 const admin = require("firebase-admin");
 
-const firebase = admin.initializeApp();
+admin.initializeApp({
+  credential: admin.credential.cert(
+    JSON.parse(process.env.FIREBASE_ADMIN_CREDENTIALS)
+  ),
+});
 
-export default firebase;
+module.exports = admin;

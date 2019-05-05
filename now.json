@@ -1,4 +1,17 @@
 {
   "version": 2,
-  "name": "todos"
+  "name": "todos",
+  "builds": [
+    {
+      "src": "/api/source/todos-endpoint.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "12mb" }
+    }
+  ],
+  "routes": [
+    { "src": "/api/todos", "dest": "/api/source/todos-endpoint.js" }
+  ],
+  "env": {
+    "FIREBASE_ADMIN_CREDENTIALS": "@firebase-admin-credentials"
+  }
 }
